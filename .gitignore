@@ -1,0 +1,15 @@
+target/
+dist/
+wasm-pack/
+pkg/
+node_modules/
+/.idea/
+/.vscode/
+/.DS_Store
+crates/umap-web/dist/
+crates/umap-web/target/
+*.sqlite3
+*.db
+*.db-shm
+*.db-wal
+tmp/
