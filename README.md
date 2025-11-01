@@ -12,6 +12,16 @@ The system ingests text files, chunks them, generates embeddings (using lightwei
 
 **✅ Status: Fully functional!** This implementation demonstrates UMAP and PCA dimensionality reduction with interactive visualization. The system includes color-coded similarity scores, diverse demo data, and works well for educational purposes.
 
+## Screenshot
+
+![UMAP Visualizer Screenshot](images/screenshot.png)
+
+## Live Demo
+
+🔗 **[Try the static demo](https://softwarewrighter.github.io/umap)** *(pre-recorded results)*
+
+**Note:** The live demo shows pre-computed UMAP visualizations with real data from this project. For full interactivity (custom queries, file uploads, parameter tuning), please build and run the project locally using the instructions below.
+
 ## Features
 
 - **CLI**: ingest text, search, and serve an API + static UI

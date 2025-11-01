@@ -1,0 +1,12 @@
+[build]
+target = "index.html"
+dist = "../docs"
+public_url = "/umap/"
+
+[serve]
+port = 8888
+
+[[hooks]]
+stage = "post_build"
+command = "sh"
+command_arguments = ["-c", "echo 'Build complete. Output in docs/'"]

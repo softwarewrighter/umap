@@ -5,6 +5,9 @@ members = [
     "crates/umap-cli",
     "crates/umap-web",
 ]
+exclude = [
+    "demo-app",
+]
 
 [workspace.package]
 edition = "2024"
