@@ -341,6 +341,12 @@ pub fn app() -> Html {
     };
 
     html! {
+        <>
+        <style>
+            {".hoverlayer .hovertext { background-color: #fffacd !important; }"}
+            {".hoverlayer .hovertext path { fill: #fffacd !important; }"}
+            {".hoverlayer .hovertext text { fill: #000000 !important; }"}
+        </style>
         <div style="font-family: system-ui, sans-serif; padding: 1rem;">
             <h2>{"UMAP Visualizer"}</h2>
             <div style="display:flex; gap: 0.5rem; align-items: center;">
@@ -388,6 +394,7 @@ pub fn app() -> Html {
                 <Plotly plot={(*plot).clone()} />
             </div>
         </div>
+        </>
     }
 }
 
