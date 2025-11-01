@@ -343,9 +343,9 @@ pub fn app() -> Html {
     html! {
         <>
         <style>
-            {".hoverlayer .hovertext { background-color: #fffacd !important; }"}
+            {".hoverlayer .hovertext, .hoverlayer .hovertext rect { background-color: #fffacd !important; fill: #fffacd !important; }"}
             {".hoverlayer .hovertext path { fill: #fffacd !important; }"}
-            {".hoverlayer .hovertext text { fill: #000000 !important; }"}
+            {".hoverlayer .hovertext text, .hoverlayer .hovertext .name, g.hovertext text { fill: #000000 !important; }"}
         </style>
         <div style="font-family: system-ui, sans-serif; padding: 1rem;">
             <h2>{"UMAP Visualizer"}</h2>

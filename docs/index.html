@@ -31,23 +31,27 @@
         .info { margin-top: 20px; padding: 15px; background: #e3f2fd; border-left: 4px solid #2196f3; border-radius: 4px; }
         .info strong { color: #1976d2; }
 
-        /* Plotly tooltip styling */
-        .hoverlayer .hovertext {
+        /* Plotly tooltip styling - 2D and 3D */
+        .hoverlayer .hovertext,
+        .hoverlayer .hovertext rect {
             background-color: #fffacd !important;  /* Light yellow */
+            fill: #fffacd !important;
         }
         .hoverlayer .hovertext path {
             fill: #fffacd !important;  /* Light yellow for arrow */
         }
-        .hoverlayer .hovertext text {
+        .hoverlayer .hovertext text,
+        .hoverlayer .hovertext .name,
+        g.hovertext text {
             fill: #000000 !important;  /* Black text */
         }
     </style>
-<link rel="modulepreload" href="/umap/umap-demo-98a131bebacf6c25.js" crossorigin="anonymous" integrity="sha384-HmD1GV0za59ABJl9XPebtQF3veQDpDEh4E4nH/HZkuMtLp0mMJ+WjaB+XWiU9KiW"><link rel="preload" href="/umap/umap-demo-98a131bebacf6c25_bg.wasm" crossorigin="anonymous" integrity="sha384-q4uhTBwqNP4MTGPkFfLxnrUf52+B78hbXesg0l7hE9gTWdJ8GTwWHbvzhPcU3FJ0" as="fetch" type="application/wasm"></head>
+<link rel="modulepreload" href="/umap/umap-demo-ad21b9bfe99ac56b.js" crossorigin="anonymous" integrity="sha384-1AI5S100bHI4gB66mjSbD/WglcnwspaCkhyuu6e5pyvwrEAj+W+Uj/W9LYarAJ65"><link rel="preload" href="/umap/umap-demo-ad21b9bfe99ac56b_bg.wasm" crossorigin="anonymous" integrity="sha384-vdIopXOGtP7F4Kf3kCWaUb/H7hNvGYfujpEYL93AObpwOplIpVGqqtzGmmY0/PXX" as="fetch" type="application/wasm"></head>
 <body>
 
 <script type="module">
-import init, * as bindings from '/umap/umap-demo-98a131bebacf6c25.js';
-const wasm = await init({ module_or_path: '/umap/umap-demo-98a131bebacf6c25_bg.wasm' });
+import init, * as bindings from '/umap/umap-demo-ad21b9bfe99ac56b.js';
+const wasm = await init({ module_or_path: '/umap/umap-demo-ad21b9bfe99ac56b_bg.wasm' });
 
 
 window.wasmBindings = bindings;

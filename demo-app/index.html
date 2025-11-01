@@ -31,14 +31,18 @@
         .info { margin-top: 20px; padding: 15px; background: #e3f2fd; border-left: 4px solid #2196f3; border-radius: 4px; }
         .info strong { color: #1976d2; }
 
-        /* Plotly tooltip styling */
-        .hoverlayer .hovertext {
+        /* Plotly tooltip styling - 2D and 3D */
+        .hoverlayer .hovertext,
+        .hoverlayer .hovertext rect {
             background-color: #fffacd !important;  /* Light yellow */
+            fill: #fffacd !important;
         }
         .hoverlayer .hovertext path {
             fill: #fffacd !important;  /* Light yellow for arrow */
         }
-        .hoverlayer .hovertext text {
+        .hoverlayer .hovertext text,
+        .hoverlayer .hovertext .name,
+        g.hovertext text {
             fill: #000000 !important;  /* Black text */
         }
     </style>
