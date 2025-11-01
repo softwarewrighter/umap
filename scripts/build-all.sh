@@ -88,6 +88,10 @@ else
     exit 1
 fi
 
+# Recreate .nojekyll for GitHub Pages (Trunk deletes it during build)
+log_info "Recreating .nojekyll for GitHub Pages..."
+touch "$PROJECT_ROOT/docs/.nojekyll"
+
 log_success "All builds complete!"
 log_info "Main app binary: $PROJECT_ROOT/target/release/umap-cli"
 log_info "Demo output: $PROJECT_ROOT/docs/"
