@@ -66,7 +66,21 @@ if ! command -v trunk &> /dev/null; then
     exit 1
 fi
 
+log_info "Capturing build metadata..."
+BUILD_GIT_SHA=$(git rev-parse --short HEAD 2>/dev/null || echo "unknown")
+BUILD_HOST=$(hostname 2>/dev/null || echo "unknown")
+BUILD_TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M:%S UTC" 2>/dev/null || echo "unknown")
+
+log_info "Git SHA: $BUILD_GIT_SHA"
+log_info "Build host: $BUILD_HOST"
+log_info "Build timestamp: $BUILD_TIMESTAMP"
+
 log_info "Building demo with Trunk (release mode)..."
+# Set environment variables for Rust compilation
+export BUILD_GIT_SHA
+export BUILD_HOST
+export BUILD_TIMESTAMP
+
 if trunk build --release; then
     log_success "Demo app built successfully"
 else
