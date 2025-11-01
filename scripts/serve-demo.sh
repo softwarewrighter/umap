@@ -21,26 +21,19 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
 log_info "Project root: $PROJECT_ROOT"
-cd "$PROJECT_ROOT/demo-app"
 
-# Check if demo-app exists
-if [ ! -f "Cargo.toml" ]; then
-    log_error "demo-app not found"
-    log_info "Run: bash $PROJECT_ROOT/scripts/setup-demo.sh"
+# Check if docs/ directory exists with built files
+if [ ! -f "$PROJECT_ROOT/docs/index.html" ]; then
+    log_error "Built demo not found in docs/"
+    log_info "Run: bash $PROJECT_ROOT/scripts/build-all.sh"
     exit 1
 fi
 
-# Check for trunk
-if ! command -v trunk &> /dev/null; then
-    log_error "trunk not found. Install with: cargo install trunk"
+# Check for basic-http-server
+if ! command -v basic-http-server &> /dev/null; then
+    log_error "basic-http-server not found"
+    log_info "Install with: cargo install basic-http-server"
     exit 1
-fi
-
-# Check if demo data exists
-if [ ! -f "assets/demo-data/romance-2d-umap.json" ]; then
-    log_warn "Demo data not found"
-    log_info "Run: bash $PROJECT_ROOT/scripts/create-demo-data.sh"
-    log_info "(Requires API server running on port 8080)"
 fi
 
 # Check if port is in use
@@ -50,7 +43,7 @@ if lsof -ti:8888 > /dev/null 2>&1; then
     exit 1
 fi
 
-log_success "Starting demo server..."
+log_success "Starting demo server (serving pre-built files from docs/)..."
 log_info "URL: http://127.0.0.1:8888/umap/"
 log_info "     or: http://localhost:8888/umap/"
 log_warn "IMPORTANT: The trailing slash is REQUIRED"
@@ -58,4 +51,5 @@ log_info ""
 log_info "Press Ctrl+C to stop"
 log_info ""
 
-exec trunk serve --port 8888
+cd "$PROJECT_ROOT/docs"
+exec basic-http-server -a 127.0.0.1:8888 .

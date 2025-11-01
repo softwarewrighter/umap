@@ -4,7 +4,7 @@ use log::{error, info};
 use serde::Deserialize;
 use yew::prelude::*;
 use yew_plotly::Plotly;
-use yew_plotly::plotly::{Layout, Plot, Scatter, Scatter3D, common::Mode};
+use yew_plotly::plotly::{Layout, Plot, Scatter, Scatter3D, common::{Mode, Label, Font}};
 
 #[derive(Deserialize, Debug, Clone)]
 struct Point2D {
@@ -162,7 +162,12 @@ pub fn app() -> Html {
                                         "Scores: {:.3}-{:.3} (Red=High, Blue=Low)",
                                         min_score, max_score
                                     );
-                                    let layout = Layout::new().title(title_text.as_str().into());
+                                    let hover_label = Label::new()
+                                        .background_color("#fffacd")
+                                        .font(Font::new().color("#000000"));
+                                    let layout = Layout::new()
+                                        .title(title_text.as_str().into())
+                                        .hover_label(hover_label);
                                     plt.add_trace(trace);
                                     plt.set_layout(layout);
                                     plot.set(plt);
@@ -232,7 +237,12 @@ pub fn app() -> Html {
                                         "Scores: {:.3}-{:.3} (Red=High, Blue=Low)",
                                         min_score, max_score
                                     );
-                                    let layout = Layout::new().title(title_text.as_str().into());
+                                    let hover_label = Label::new()
+                                        .background_color("#fffacd")
+                                        .font(Font::new().color("#000000"));
+                                    let layout = Layout::new()
+                                        .title(title_text.as_str().into())
+                                        .hover_label(hover_label);
                                     plt.add_trace(trace);
                                     plt.set_layout(layout);
                                     plot.set(plt);

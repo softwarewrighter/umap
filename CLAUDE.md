@@ -12,15 +12,25 @@ UMAP Text Visualizer is a Rust (2024 edition) CLI and web UI demonstrating dimen
 
 ## Technology Stack Constraints
 
-**IMPORTANT**: This is a pure Rust project with minimal JavaScript dependencies. When working on this codebase:
+**CRITICAL - READ THIS FIRST**: This is a **pure Rust project**. The maintainer has a **strong preference for type-safe languages** (Rust over TypeScript) for all domain and presentation logic.
 
-- ✅ **USE**: Rust, Cargo, Trunk (for WASM builds and serving)
-- ❌ **DO NOT USE**: Python, JavaScript, TypeScript, Node.js, npm
-- ✅ **For serving**: Use `trunk serve` (NOT Python's http.server)
-- ✅ **For frontend**: Yew (Rust WASM framework)
-- ✅ **For visualization**: Plotly.js (loaded via CDN, used from Yew via yew-plotly)
+**ABSOLUTELY DO NOT**:
+- ❌ Write any JavaScript, Python, or TypeScript code
+- ❌ Add custom JavaScript to HTML files (even inline `<script>` tags)
+- ❌ Use Node.js, npm, or any JavaScript tooling
+- ❌ Suggest JavaScript-based solutions to problems
 
-The project demonstrates a full-stack Rust application. All development tooling should respect this constraint.
+**ALWAYS USE**:
+- ✅ Rust for all logic (domain, presentation, business logic)
+- ✅ Cargo for package management
+- ✅ Trunk for WASM builds and development serving
+- ✅ Yew (Rust WASM framework) for frontend
+- ✅ Plotly.js loaded via CDN (external library only - configure it from Rust via yew-plotly)
+- ✅ Bash for simple build/deployment scripts only
+
+**The Rule**: If you need to add functionality, find the Rust API for it. If the Rust binding doesn't exist, propose creating one or using an alternative Rust approach. Never fall back to JavaScript.
+
+The project demonstrates a full-stack Rust application. **This constraint is non-negotiable**.
 
 ## Build Commands
 

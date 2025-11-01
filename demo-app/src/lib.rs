@@ -2,7 +2,7 @@ use wasm_bindgen::prelude::*;
 use yew::prelude::*;
 use yew_plotly::plotly::{
     Plot, Configuration, Scatter, Scatter3D,
-    common::{Marker, Mode, Title, Line},
+    common::{Marker, Mode, Title, Line, Label, Font},
     layout::{Axis, Layout},
 };
 use gloo_net::http::Request;
@@ -163,10 +163,15 @@ pub fn app() -> Html {
                     .color("rgb(93, 164, 214)")
                     .line(Line::new().width(0.5).color("rgb(255, 255, 255)")));
 
+            let hover_label = Label::new()
+                .background_color("#fffacd")  // Light yellow background
+                .font(Font::new().color("#000000"));  // Black text
+
             let layout = Layout::default()
                 .title(Title::new(&format!("{} - Text Embeddings", demo_title)))
                 .height(700)
-                .hover_mode(yew_plotly::plotly::layout::HoverMode::Closest);
+                .hover_mode(yew_plotly::plotly::layout::HoverMode::Closest)
+                .hover_label(hover_label);
 
             let mut plot = Plot::new();
             plot.add_trace(trace);
@@ -185,12 +190,17 @@ pub fn app() -> Html {
                     .color("rgb(93, 164, 214)")
                     .line(Line::new().width(0.5).color("rgb(255, 255, 255)")));
 
+            let hover_label = Label::new()
+                .background_color("#fffacd")  // Light yellow background
+                .font(Font::new().color("#000000"));  // Black text
+
             let layout = Layout::default()
                 .title(Title::new(&format!("{} - Text Embeddings", demo_title)))
                 .x_axis(Axis::default().title(Title::new("Dimension 1")).zero_line(true))
                 .y_axis(Axis::default().title(Title::new("Dimension 2")).zero_line(true))
                 .height(700)
-                .hover_mode(yew_plotly::plotly::layout::HoverMode::Closest);
+                .hover_mode(yew_plotly::plotly::layout::HoverMode::Closest)
+                .hover_label(hover_label);
 
             let mut plot = Plot::new();
             plot.add_trace(trace);
