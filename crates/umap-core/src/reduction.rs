@@ -359,7 +359,8 @@ fn optimize_layout(
                 if jn == i {
                     continue;
                 }
-                let gradn = negative_gradient(y, i, jn, params.a, params.b, params.repulsion_strength);
+                let gradn =
+                    negative_gradient(y, i, jn, params.a, params.b, params.repulsion_strength);
                 for d in 0..dims {
                     y[(i, d)] += params.learning_rate * gradn[d];
                     y[(jn, d)] -= params.learning_rate * gradn[d];

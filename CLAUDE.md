@@ -32,6 +32,59 @@ UMAP Text Visualizer is a Rust (2024 edition) CLI and web UI demonstrating dimen
 
 The project demonstrates a full-stack Rust application. **This constraint is non-negotiable**.
 
+## Development Process (MANDATORY)
+
+**READ THIS BEFORE MAKING ANY CHANGES**: This project has a **strict, mandatory development process** documented in `documentation/process.md`.
+
+### Process Requirements (Non-Negotiable)
+
+**EVERY change** must follow this process:
+
+1. ✅ **Test Driven Development (TDD)**: RED/GREEN testing cycle
+   - Write failing test first (RED)
+   - Implement minimal code to pass (GREEN)
+   - Refactor while keeping tests green
+   - **NO commits without tests for new features/fixes**
+
+2. ✅ **Code Quality**: Modular, maintainable, documented
+   - Small, focused functions (< 50 lines when possible)
+   - Clear separation into crates/modules
+   - All public APIs documented with examples
+   - **NO large monolithic functions**
+
+3. ✅ **UI Verification**: Use MCP/Playwright for ALL UI changes
+   - Verify changes visually with screenshots
+   - Test interactions (click, fill, hover, etc.)
+   - Update `images/screenshot.png` when UI changes
+   - **NO UI commits without verification and screenshot updates**
+
+4. ✅ **Pre-Commit Quality Checks**: ALL must pass before commit
+   - `cargo fmt --all` (formatting)
+   - `cargo build --all --release` (ZERO warnings)
+   - `cargo clippy --all --all-targets -- -D warnings` (ZERO warnings)
+   - `cargo test --all` (ALL tests pass)
+   - `bash scripts/build-all.sh` (demo builds)
+   - **NO suppressing warnings/errors with directives**
+   - **NO disabling failing tests**
+   - **Fix the code, don't silence the tools**
+
+5. ✅ **Documentation Updates**: Before every commit
+   - Update relevant .md files
+   - Ensure .gitignore is correct
+   - Update code comments
+   - **NEVER delete documentation**
+
+6. ✅ **Use Build Scripts**: Always use `./scripts/` during development
+   - `bash scripts/build-all.sh` for building
+   - `bash scripts/serve-demo.sh` for serving
+   - Ensures scripts stay correct and changes are captured
+
+### The Bottom Line
+
+**Read `documentation/process.md` NOW and follow it EXACTLY.**
+
+This process is **MANDATORY** and **NON-NEGOTIABLE**. No exceptions. No shortcuts.
+
 ## Build Commands
 
 Build the entire workspace:
@@ -241,9 +294,11 @@ The demo loads canned results (no backend required) to showcase UMAP/PCA visuali
 ## Documentation
 
 Project design and planning docs in `documentation/`:
+- **`process.md`**: **MANDATORY development process** (TDD, quality checks, UI verification)
 - `architecture.md`: Component overview and data flow
 - `design.md`: Interface details and design rationale
 - `PRD.md`: Product requirements
 - `plan.md`: Development milestones and risks
 - `research.md`: Background research
 - `test-checklist.md`: Testing guidelines
+- `demo-explanation.md`: Demo data and visualization details

@@ -4,7 +4,10 @@ use log::{error, info};
 use serde::Deserialize;
 use yew::prelude::*;
 use yew_plotly::Plotly;
-use yew_plotly::plotly::{Layout, Plot, Scatter, Scatter3D, common::{Mode, Label, Font}};
+use yew_plotly::plotly::{
+    Layout, Plot, Scatter, Scatter3D,
+    common::{Font, Label, Mode},
+};
 
 #[derive(Deserialize, Debug, Clone)]
 struct Point2D {
