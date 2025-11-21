@@ -43,7 +43,7 @@ GitHub Wikis are stored in a separate Git repository. You can clone and manage i
 
 ```bash
 # Clone the wiki repository
-git clone https://github.com/softwarewrighter/umap.wiki.git
+git clone https://github.com/sw-viz/umap.wiki.git
 
 # Copy wiki files
 cp wiki/*.md umap.wiki/
@@ -57,7 +57,7 @@ git push origin master
 
 ### Method 2: Manual Upload via GitHub UI
 
-1. Go to https://github.com/softwarewrighter/umap/wiki
+1. Go to https://github.com/sw-viz/umap/wiki
 2. Click "Create new page" or edit existing pages
 3. Copy content from each .md file
 4. Save each page
@@ -70,7 +70,7 @@ git push origin master
 
 ```bash
 # First time: Clone wiki repo
-git clone https://github.com/softwarewrighter/umap.wiki.git wiki-repo
+git clone https://github.com/sw-viz/umap.wiki.git wiki-repo
 
 # Update script
 #!/bin/bash

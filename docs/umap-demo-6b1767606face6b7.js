@@ -249,12 +249,12 @@ export function run_app() {
     wasm.run_app();
 }
 
-function wasm_bindgen__convert__closures________invoke__hf0ba395b09a6e3c4(arg0, arg1, arg2) {
-    wasm.wasm_bindgen__convert__closures________invoke__hf0ba395b09a6e3c4(arg0, arg1, arg2);
-}
-
 function wasm_bindgen__convert__closures_____invoke__h09b5a5232ce15ea3(arg0, arg1, arg2) {
     wasm.wasm_bindgen__convert__closures_____invoke__h09b5a5232ce15ea3(arg0, arg1, arg2);
+}
+
+function wasm_bindgen__convert__closures________invoke__hf0ba395b09a6e3c4(arg0, arg1, arg2) {
+    wasm.wasm_bindgen__convert__closures________invoke__hf0ba395b09a6e3c4(arg0, arg1, arg2);
 }
 
 const EXPECTED_RESPONSE_TYPES = new Set(['basic', 'cors', 'default']);

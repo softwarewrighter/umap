@@ -14,7 +14,7 @@ const BUILD_GIT_SHA: &str = env!("BUILD_GIT_SHA");
 const BUILD_HOST: &str = env!("BUILD_HOST");
 const BUILD_TIMESTAMP: &str = env!("BUILD_TIMESTAMP");
 const COPYRIGHT: &str = "Copyright (c) 2025 Michael A. Wright";
-const GITHUB_URL: &str = "https://github.com/softwarewrighter/umap";
+const GITHUB_URL: &str = "https://github.com/sw-viz/umap";
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 struct SearchResult {

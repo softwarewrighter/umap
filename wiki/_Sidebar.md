@@ -27,5 +27,5 @@
 ### Resources
 
 - [GitHub Repository](../../)
-- [Live Demo](https://softwarewrighter.github.io/umap/)
+- [Live Demo](https://sw-viz.github.io/umap/)
 - [Issues](../../issues)

@@ -108,7 +108,7 @@ graph LR
     end
 
     subgraph "GitHub Pages"
-        Pages[softwarewrighter.github.io/umap/]
+        Pages[sw-viz.github.io/umap/]
         HTML[index.html]
         WASM[*.wasm]
         JSON[demo-data/*.json]
@@ -197,7 +197,7 @@ git push origin main
 5. Select folder: `/docs`
 6. Save
 
-**Access:** https://softwarewrighter.github.io/umap/
+**Access:** https://sw-viz.github.io/umap/
 
 ### Demo Limitations
 
@@ -745,7 +745,7 @@ curl "http://localhost:8080/api/search?query=test&k=10"  # Reduce k
 - [[Architecture]] - System architecture
 - [[umap-cli]] - CLI and server details
 - [[umap-web]] - Frontend details
-- [GitHub Pages Demo](https://softwarewrighter.github.io/umap/) - Live demo
+- [GitHub Pages Demo](https://sw-viz.github.io/umap/) - Live demo
 
 ## External Resources
 

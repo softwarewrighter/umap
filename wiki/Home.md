@@ -99,6 +99,6 @@ Key requirements:
 
 ## Demo
 
-A live demo is available on GitHub Pages: [UMAP Text Visualizer Demo](https://softwarewrighter.github.io/umap/)
+A live demo is available on GitHub Pages: [UMAP Text Visualizer Demo](https://sw-viz.github.io/umap/)
 
 The demo uses pre-computed data and runs entirely in the browser (WASM).

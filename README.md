@@ -18,7 +18,7 @@ The system ingests text files, chunks them, generates embeddings (using lightwei
 
 ## Live Demo
 
-🔗 **[Try the static demo](https://softwarewrighter.github.io/umap)** *(pre-recorded results)*
+🔗 **[Try the static demo](https://sw-viz.github.io/umap)** *(pre-recorded results)*
 
 **Note:** The live demo shows pre-computed UMAP visualizations with real data from this project. For full interactivity (custom queries, file uploads, parameter tuning), please build and run the project locally using the instructions below.
 
